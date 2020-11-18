@@ -1,0 +1,13 @@
+.body{
+	background-color: gray;
+	line-height: 65px;
+	display: flex;
+	justify-content: center;
+	border: 3px solid black;
+	width: 500px;
+	height: 100%;
+}
+
+.borda{
+		border: 3px solid black;
+}

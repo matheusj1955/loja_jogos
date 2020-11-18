@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Cadastro de Jogos</title>
+	<link type="text/css" rel="stylesheet" href="style.css" />
+</h:head>
+<h:body>
+
+	<h:form>
+
+		<h1 class="body">Cadastro de Jogos</h1>
+	
+		<h:messages 
+			errorStyle="color:red"
+			infoStyle="color:green"
+			warnStyle="color:orange"
+			globalOnly="true" 
+			showDetail="false"/>
+		<h:panelGrid columns="2" class="borda">
+			
+			<h:outputLabel value="Jogo:" />
+			<h:panelGroup>
+				<h:inputText id="itNome" value="#{cadastroJogosController.jogo.nome}"
+						required="true"
+						requiredMessage="Informe o nome do jogo!" 
+						validatorMessage="Informe um valor entre 2 e 60" >
+					<f:validateLength minimum="2" maximum="60" />
+				</h:inputText>
+				<h:message for="itNome" style="color:red"/>
+			</h:panelGroup>
+			
+			
+			<h:outputLabel value="Valor: " />
+				<h:panelGroup>
+				<h:inputText id="itValor" value="#{cadastroJogosController.jogo.valor}"
+						required="true"
+						requiredMessage="Informe o valor do jogo" >
+
+				</h:inputText>
+				<h:message for="itValor" style="color:red"/>
+			</h:panelGroup>
+			
+	
+		<h:commandButton value="Incluir"
+			actionListener="#{cadastroJogosController.incluir()}" 
+			disabled="#{cadastroJogosController.jogo.id != null}">
+		</h:commandButton>	
+
+		</h:panelGrid>
+
+			
+		</h:form>
+			
+		<h:form class="body"  id="formDataTable">
+		<h:dataTable value="#{cadastroJogosController.listaJogos}" var="obj">
+			<h:column>
+				<f:facet name="header">Id</f:facet>		
+				<h:outputLabel value="#{obj.id}"/>	
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Nome</f:facet>	
+				<h:commandLink value="#{obj.nome}" />
+			</h:column>
+						
+			<h:column>
+				<f:facet name="header">Valor</f:facet>	
+				<h:commandLink value="#{obj.valor}" />
+			</h:column>
+						
+
+
+		</h:dataTable>
+	</h:form>	
+			
+</h:body>
+</html>

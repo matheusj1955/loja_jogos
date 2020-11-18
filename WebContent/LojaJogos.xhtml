@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Loja - Top Games</title>
+		<link type="text/css" rel="stylesheet" href="style.css" />
+</h:head>
+<h:body>
+	<h1 class="body">Top Games</h1>
+		<h:dataTable class="body">
+		
+		
+		
+				<h:column>
+				<f:facet name="header">God Of War</f:facet>
+		<h:commandButton value="label1 e 2" actionListener="#{ajax.imprimir}">
+			<f:ajax render="output1 output2" execute="input"/>
+		</h:commandButton>
+				</h:column>
+				
+				<h:column>
+				<f:facet name="header">Fifa 21</f:facet>	
+				</h:column>
+				
+				<h:column>	
+				<f:facet name="header">Battle Field</f:facet>	
+				</h:column>
+				
+
+				<h:column>	
+				<f:facet name="header">Need for Speed</f:facet>		
+				</h:column>
+							
+		</h:dataTable>
+		
+		<h:panelGrid class="body">				
+		<h:form >
+				<h2 style="">Carrinho de compras</h2>				
+ 		<h:dataTable  value="#{produtoController.listaProduto}"
+			var="obj">
+			<h:column>
+				<f:facet name="header">Id</f:facet>
+				<h:outputLabel value="#{obj.id}" />
+			</h:column>
+					
+			<h:column>
+				<f:facet name="header">Jogo</f:facet>
+				<h:commandLink value="#{obj.jogo}"/>
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Plataforma</f:facet>
+				<h:commandLink value="#{obj.plataforma}"/>
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">Valor</f:facet>
+				<h:outputLabel value="#{obj.valor}" />
+			</h:column>
+
+		</h:dataTable>
+
+			</h:form>
+		</h:panelGrid>
+			<h:commandButton value="Comprar"
+			actionListener="#{usuarioController.incluir()}" 
+			disabled="#{usuarioController.usuario.id != null}">
+			<f:ajax execute="@form" render="@form formDataTable"/>
+		</h:commandButton>	
+		
+		
+			
+				
+
+
+</h:body>
+</html>
