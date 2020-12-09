@@ -13,11 +13,11 @@
 </h:head>
 <h:body>
 	 <div class="wrapper">
-	 	<div class="box navbar header">
-			<h1 >.: Top Games :.</h1>
+	 	<div class="box navbar header" style="background-color: black">
+			<h1 style="color: white">.: Top Games :.</h1>
 			<div >
 				<h:form rendered="#{templateController.usuarioLogado != null}"> 
-					<h:outputLabel value="Olá #{templateController.usuarioLogado.nome}"/>
+					<h:outputLabel style="color: white;" value="Olá #{templateController.usuarioLogado.nome}"/>
 					<h:commandLink value=" (Sair)"   
 						action="#{templateController.encerrarSessao}"
 						style="color:blue"/>

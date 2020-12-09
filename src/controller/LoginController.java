@@ -16,6 +16,10 @@ public class LoginController {
 
 	private Usuario usuario;
 
+	public void cadastro(){
+		Util.redirect("usuario.xhtml");
+	}
+	
 	public void logar() {
 		
 		UsuarioDAO dao = new UsuarioDAO();
@@ -36,6 +40,9 @@ public class LoginController {
 			Util.addErrorMessage("Problema ao verificar o Login. Entre em contato pelo email: contato@email.com.br");
 		}
 	}
+	
+
+	
 	public Usuario getUsuario() {
 		if (usuario == null)
 			usuario = new Usuario();
