@@ -12,10 +12,16 @@ public class Usuario implements Cloneable {
 	
 	@NotBlank(message = "O email não pode ser nulo.")
 	private String email;
+	private LocalDate dataNascimento;
 
 	@Size(min = 3, max = 10, message = "A senha deve conter no mínimo 6 dígitos e maximo 10.")
 	@NotBlank(message = "A senha não pode ser nula.")
 	private String senha;
+	private Sexo sexo;
+	private Perfil perfil;
+	
+	private Telefone telefone;
+
 	public Integer getId() {
 		return id;
 	}
@@ -48,6 +54,13 @@ public class Usuario implements Cloneable {
 		this.email = email;
 	}
 
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 
 	public String getSenha() {
 		return senha;
@@ -57,6 +70,29 @@ public class Usuario implements Cloneable {
 		this.senha = senha;
 	}
 
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
+
+	public Perfil getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
+	}
+
+	public Telefone getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
+	}
 
 	@Override
 	public int hashCode() {

@@ -22,7 +22,7 @@ public class LoginController {
 		try {
 			Usuario usuarioLogado = 
 					dao.obterUsuario(getUsuario().getEmail(), 
-							Util.hash(getUsuario().getEmail()+getUsuario().getSenha()));
+							Util.hash(getUsuario().getSenha()));
 			if (usuarioLogado == null)
 				Util.addErrorMessage("Usuário ou senha inválido.");
 			else {
@@ -36,7 +36,6 @@ public class LoginController {
 			Util.addErrorMessage("Problema ao verificar o Login. Entre em contato pelo email: contato@email.com.br");
 		}
 	}
-
 	public Usuario getUsuario() {
 		if (usuario == null)
 			usuario = new Usuario();

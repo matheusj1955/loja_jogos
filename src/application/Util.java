@@ -1,5 +1,4 @@
-package application;
-import java.io.IOException;
+package application;import java.io.IOException;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;

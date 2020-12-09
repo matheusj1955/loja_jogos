@@ -9,11 +9,12 @@ import javax.inject.Named;
 @ViewScoped
 public class TesteAjax implements Serializable {
 
+
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -1122690702742859509L;
-
+	private static final long serialVersionUID = 1835278071049934104L;
 	private String nome;
 	
 	public void imprimir() {

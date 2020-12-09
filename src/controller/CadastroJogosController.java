@@ -23,6 +23,9 @@ public class CadastroJogosController implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 9006004924308428897L;
+	/**
+	 * 
+	 */
 	
 	
 	private Jogo jogo;
