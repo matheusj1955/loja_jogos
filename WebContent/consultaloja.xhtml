@@ -7,15 +7,6 @@
 	
 <ui:composition template="template.xhtml">
 
-<ui:define name="menu">
-	<h1>Menu</h1>
-	<h:form>
-		<h:commandLink value="Login" action="login.xhtml?faces-redirect=true"/> <br/>
-		<h:commandLink value="Cadastro de Jogo" action="consultaMidia.xhtml?faces-redirect=true"/> <br/>
-	</h:form>
-
-</ui:define>
-
 
 <ui:define name="conteudo">
 
@@ -54,13 +45,14 @@
 							   <f:selectItem itemValue="2" itemLabel="Descrição" />                   
 							</h:selectOneMenu>
 					    </div>
+					    <br/>
 					    <div class="form-group col-md-6">
 					     	<input type="text" class="form-control" 
 					     		placeholder="Informe o filtro ..."
 								jsf:value="#{consultaLojaController.filtro}" />
 					    	
 					    </div>
-					    
+					    <br/>
 					    <div class="form-group col-md-2">
 					      <h:commandButton value="Pesquisar"
 					     		class="btn btn-primary"

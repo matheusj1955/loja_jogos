@@ -6,6 +6,8 @@
 <ui:composition template="/template.xhtml">
 <ui:define name="conteudo">
 
+<div class="container">
+<div style="margin-left: 400px">
 	<h1 style="">Cadastro de Usuário</h1>
 
 	<h:form>
@@ -80,30 +82,32 @@
 			 </h:panelGroup>			
 
 		</h:panelGrid>
-
-		<h:commandButton value="Incluir"
+		<br/>
+		<h:commandButton class="btn btn-success"  style="margin-left: 10px;" value="Incluir"
 			actionListener="#{usuarioController.incluir()}" 
 			disabled="#{usuarioController.entity.id != null}">
 			<f:ajax execute="@form" render="@form formDataTable"/>
 		</h:commandButton>	
 			
-		<h:commandButton value="Alterar"
+		<h:commandButton style="margin-left: 10px;"  value="Alterar"
 			actionListener="#{usuarioController.alterar()}" 
 			disabled="#{usuarioController.entity.id == null}">
 			<f:ajax execute="@form" render="@form formDataTable"/>
 		</h:commandButton>	
 		
-		<h:commandButton value="Excluir"
+		<h:commandButton style="margin-left: 10px;" value="Excluir"
 			actionListener="#{usuarioController.excluir()}" 
 			disabled="#{usuarioController.entity.id == null}">
 			<f:ajax execute="@this" render="@form formDataTable"/>
 		</h:commandButton>
 	
-		<h:commandButton value="Limpar"
+		<h:commandButton style="margin-left: 10px;" value="Limpar"
 			actionListener="#{usuarioController.limpar}" >
 			<f:ajax execute="@this" render="@form"/>
 		</h:commandButton>
 	</h:form>	
+	</div>
+	<br/>
 	<h:form id="formDataTable">		
 		<h:dataTable style="" value="#{usuarioController.listaEntity}" var="obj">
 			<h:column>
@@ -151,6 +155,7 @@
 		
 		</h:dataTable>
 	</h:form>	
+	</div>
 </ui:define>
 </ui:composition>
 </html>
