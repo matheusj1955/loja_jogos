@@ -14,7 +14,7 @@ public class Venda {
 		int i = 0;
 		Double valor = 0.0;
 		while(i < this.listaItemVenda.size()){
-			valor =+ this.listaItemVenda.get(i).getPreco();
+			valor = valor + this.listaItemVenda.get(i).getPreco();
 			i++;
 			}
 			return valor;
