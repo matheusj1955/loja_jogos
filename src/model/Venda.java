@@ -11,7 +11,13 @@ public class Venda {
 
 	// método calculado
 	public Double getTotalVenda() {
-		return 0.0;
+		int i = 0;
+		Double valor = 0.0;
+		while(i < this.listaItemVenda.size()){
+			valor =+ this.listaItemVenda.get(i).getPreco();
+			i++;
+			}
+			return valor;
 	}
 	
 	public Integer getId() {

@@ -83,25 +83,25 @@
 
 		</h:panelGrid>
 		<br/>
-		<h:commandButton class="btn btn-success"  style="margin-left: 10px;" value="Incluir"
+		<h:commandButton class="btn btn-outline-danger"  style="margin-left: 10px;" value="Incluir"
 			actionListener="#{usuarioController.incluir()}" 
 			disabled="#{usuarioController.entity.id != null}">
 			<f:ajax execute="@form" render="@form formDataTable"/>
 		</h:commandButton>	
 			
-		<h:commandButton style="margin-left: 10px;"  value="Alterar"
+		<h:commandButton class="btn btn-outline-danger" style="margin-left: 10px;"  value="Alterar"
 			actionListener="#{usuarioController.alterar()}" 
 			disabled="#{usuarioController.entity.id == null}">
 			<f:ajax execute="@form" render="@form formDataTable"/>
 		</h:commandButton>	
 		
-		<h:commandButton style="margin-left: 10px;" value="Excluir"
+		<h:commandButton  class="btn btn-outline-danger" style="margin-left: 10px;" value="Excluir"
 			actionListener="#{usuarioController.excluir()}" 
 			disabled="#{usuarioController.entity.id == null}">
 			<f:ajax execute="@this" render="@form formDataTable"/>
 		</h:commandButton>
 	
-		<h:commandButton style="margin-left: 10px;" value="Limpar"
+		<h:commandButton class="btn btn-outline-danger" style="margin-left: 10px;" value="Limpar"
 			actionListener="#{usuarioController.limpar}" >
 			<f:ajax execute="@this" render="@form"/>
 		</h:commandButton>
