@@ -38,20 +38,25 @@
 								value="#{loginController.usuario.senha}" />
 						</div>
 						<br/>
-						<h:commandButton class="btn btn-outline-primary" value="   Logar   "
+						<h:commandButton class="btn btn-outline-primary" value="         Logar         "
 							styleClass="btn btn-lg btn-block btn-login"
-							action="#{loginController.logar()}" style="background-color: white;" />
-							
-						<h:commandButton class="btn btn-primary" value="Cadastre-se"
-							styleClass="btn btn-lg btn-block btn-login"
-							action="#{loginController.cadastro()}" style="background-color: white; margin-left: 60px" />
+							action="#{loginController.logar()}" style="background-color: white; color:blue; margin-left: 60px" />
+					
+
 					</div>
-					<br/>
-					<br/>
-					<br/>
+
 				</h:form>
-				
+				<br/>
+				<h:form>
+							<h:commandButton  value="    Cadastre-se    "
+							styleClass="btn btn-lg btn-block btn-login"
+							action="#{loginController.cadastro()}" style="background-color: white; color:red; margin-left: 60px" />
+				</h:form>
+					<br/>
+					<br/>
+					<br/>
 			</div>
+
 		</div>
 	</div>
 

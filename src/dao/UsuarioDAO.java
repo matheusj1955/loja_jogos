@@ -108,7 +108,7 @@ public class UsuarioDAO implements DAO<Usuario> {
 			stat.setString(1, obj.getNome());
 			stat.setString(2, obj.getCpf());
 			stat.setString(3, obj.getEmail());
-			stat.setString(4, obj.getSenha());
+			stat.setString(4, Util.hash(obj.getSenha()));
 			// ternario java
 			stat.setObject(5, (obj.getSexo() == null ? null : obj.getSexo().getId()));
 			stat.setObject(6, (obj.getPerfil() == null ? null : obj.getPerfil().getId()));
